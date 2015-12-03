@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>iCloud</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                user-drag: none;
+                user-select: none; 
+                -ms-user-select: none;
+                -moz-user-select: none;
+                -webkit-user-drag: none;
+                -webkit-user-select: none;
+            }
+            body {
+                background: url("images/icloud-background.png") #082b4f;
+                background-attachment: fixed;
+                background-size: contain;
+                background-position: center;
+               
+            }
+            /* Header Style iCloud */
+            #topbar {
+                width: 100%;
+                height: 54px;
+                overflow: hidden;
+                display: inline-block;
+            }
+            #topbar label {
+                position:absolute;
+                width:56px;
+                height:16px;
+                font-family: 'Helvetica Neue', sans-serif;
+                font-size: 21px;
+                font-weight: 300;
+                color: #CCD5D9;
+                margin: 10px;
+            }
+            #topbar #renditja {
+                float: right;
+                position: relative;
+                margin-right: 10px;
+                margin-top: 7px;
+            }
+            #topbar #setup,
+            #topbar #vija {
+                display: inline-block;
+                text-decoration: none;
+                font-family: 'Helvetica Neue', sans-serif;
+                font-size: 22px;
+                font-weight: 100;
+                color: #CCD5D9;
+                margin-right: 5px;
+            }
+            #topbar #vija {
+                margin-right: 10px;
+                font-size: 24px;
+                
+            }
+            #topbar #helpLogo {
+                display: inline-block;
+                float: right;
+                margin-top: 5px;
+                font-weight: normal;
+            }
+            /* Finish Header Style iCloud */
+            
+            /* Images iCloud */
+            .container {
+                width:90%;
+                margin:0 auto;
+                margin-top: 10%;
+                margin-left: 7%;
+            }
+
+            .container ul li{
+                float: left;
+                overflow: inherit;
+                list-style: none;
+                
+            }
+            
+            #foto,#foto1 {
+                opacity: 0.9;
+                filter: alpha(opacity=90);
+                filter: blur(45px); 
+                -webkit-filter: blur(45px);
+                -moz-filter: blur(45px);
+                -o-filter: blur(45px); 
+                -ms-filter: blur(45px);
+            }
+            #foto1 {
+                margin-top: 38%;
+            }
+            /* Finish Images iCloud */
+            
+            /* Login Form iCloud */
+           div#back_glob {
+                position: fixed;
+                width: 360px;
+                height: 550px;
+                margin-top: -3%;
+                left: 35%;
+            }
+            input {
+                display: block;
+                margin: 10px;
+            }
+            div#back_header {
+                text-align: center;
+                padding: 20px;
+            }
+            div#back_header label {
+                font-family: 'Helvetica Neue', sans-serif;
+                position: absolute;
+                text-align: center;
+                color: white;
+                left: 0px;
+                right: 0px;
+                font-size: 32px;
+                font-weight: 200;
+                line-height: 70px;
+                
+            }
+            input[type=text],input[type=password] {
+                width: 300px;
+                height: 45px;  
+                margin: 0 auto;
+                border: 0;
+                background: #DAE7EB;
+                color: #6B6D6F;
+                border-spacing: 8px;
+                padding-left: 16px;
+                font-size: 19px;
+                font-weight: 100;
+            }
+            input[type=text] {
+                margin-top: 50px;
+                border-top-right-radius: 6px 6px;
+                border-top-left-radius: 6px 6px;
+                border-bottom: 1px solid #D9D9D9;
+            }
+            input[type=text]:focus {
+                margin-top: 50px;
+                border-top-right-radius: 6px 6px;
+                border-top-left-radius: 6px 6px;
+                border: 1px solid #D9D9D9;
+                box-shadow: 0px 0px 1px #3b7fca;
+                -webkit-box-shadow: #3b7fca 0px 0px 1px;
+                -moz-box-shadow: #3b7fca 0px 0px 1px;
+                border-color: #1780fb;
+
+            }
+            input[type=password] {
+                border-bottom-left-radius: 6px 6px;
+                border-bottom-right-radius: 6px 6px;
+                
+            }
+            input[type=password]:focus {
+                border-bottom-left-radius: 6px 6px;
+                border-bottom-right-radius: 6px 6px;
+                border: 1px solid #D9D9D9;
+                box-shadow: 0px 0px 1px #3b7fca;
+                -webkit-box-shadow: #3b7fca 0px 0px 1px;
+                -moz-box-shadow: #3b7fca 0px 0px 1px;
+                border-color: #1780fb;
+
+            }
+            #login_button {
+                background: #DAE7EB url("images/login_img.png") right no-repeat;
+            }
+            #rem {
+                text-align: center;
+                margin-top: 10px;
+            }
+            #rem label{
+                color: white;
+                font-size: 17px;
+                margin-left: -5px;
+                vertical-align: middle;
+            }
+            input[type=checkbox] {
+                content: '';
+                background: red;
+                border: 2px solid red;
+                width: 17px;
+                height: 17px;
+                display: inline;
+                text-align: center;
+                vertical-align: middle;
+            }
+            input[type=checkbox]:focus {
+                 border: 1px solid red;
+                color: red;
+            }
+            
+            #check {
+                background: red;
+                color: red;
+                border: black solid 5px;
+            }
+            #viza p{
+                border-bottom: 1px solid wheat;
+                border-bottom-right-radius: 100%;
+                border-top-left-radius: 100%;
+                width: 320px;
+                margin: 0 auto;
+            }
+            #forgot {
+                text-decoration: none;
+                color: rgba(250,250,250,0.8);
+                font-size: 13px;
+                font-weight: bold;
+                display: block;
+                line-height: 20px;
+            }
+            #forgot:hover {
+                color: white;
+            }
+           
+            div#back_form {
+                display: flex;
+                justify-content: center;
+            }
+            
+            /* Finish Login Form */
+            
+            /* Footer Style iCloud */
+            footer {
+                width: 100%;
+                height: 56px;
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+            }
+            footer .logo{
+                border: 0px none;
+                background-image: url('images/stylesheet-1.png');
+                background-position: -209px 0px;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 3px;
+                bottom: 3px;
+                width: 31px;
+                height: 35px;
+            }
+            .row {
+                position: absolute;
+                right: 10px;
+                bottom: 3px;
+                top: 6px;
+            }
+            .span12 {
+                position: relative;
+            }
+            .span12 ul {
+                padding: 0;
+                
+            }
+            .span12 ul li {
+                display: inline-block;
+                list-style: none;
+                margin-left: 3px;
+                color: rgba(243,218,200,1);
+                 -webkit-font-smoothing: antialiased;
+                font-size: 15px;
+                font-weight: 500;
+                
+            }
+            .span12 ul li:first-child {
+                margin-left: 0;
+            }
+            .span12 ul li a {
+                display:inline-block;
+                margin:20px 3px 3px 0px;
+                color: white;
+                color: rgba(243,218,200,1);
+                text-shadow: #3a1800 0px 3px 25px;
+                text-decoration:none;
+                -webkit-font-smoothing: antialiased;
+                font-size: 15px;
+            }
+            .span12 ul li a:hover {
+               color:#fff;
+            }
+            .span12 ul li a.active,
+            .span12 ul li a.active:hover {
+               color:#fff;
+               background:#000;
+               font-weight:bold;
+            }
+            #footer_seperator {
+                width: 1px;
+                height: 5px;
+                vertical-align: baseline;
+                color: rgba(243,218,200,1);
+            }
+            /* Finish Footer Style iCloud */
+            
+       
+        </style>
+    </head>
+    <body>
+        <!-- Header iCloud -->
+        <div id="topbar">
+            <label>iCloud</label>
+            <span id="renditja">
+                <a href="index.html" id="setup">Setup Instructions</a>
+                <a href="index.html" id="vija">|</a>
+                <span id="helpLogo"><a href="test.html" ><img src="images/helplogo.png" width="22px" height="22px"/></a></span>
+            </span>
+            
+        </div>
+
+        <div class="container">
+            <ul>
+                <li><img src="images/mail_icon.png" id="foto"/></li>
+                <li><img src="images/contacts_icon.png" id="foto"/></li>
+                <li><img src="images/icloud_drive_icon.png"id="foto" /></li>
+                <li><img src="images/contacts_icon.png" id="foto"/></li>
+                <li><img src="images/icloud_drive_icon.png" id="foto" /></li>
+                <li><img src="images/notes_icon.png" id="foto"/></li>
+
+                <li><img src="images/reminders_icon.png" id="foto1"/> </li>
+                <li><img src="images/icon_002.png" id="foto1"/></li>
+                <li><img src="images/icon_003.png" id="foto1"/></li>
+                <li><img src="images/icon.png" id="foto1"/></li>
+                <li><img src="images/find_icon.png" id="foto1"/></li>
+                <li><img src="images/settings_icon.png" id="foto1"/></li>
+               
+            </ul>
+        </div>
+
+        <!-- Finish Header iCloud -->
+        
+        <!-- Login Form iCloud -->
+        
+        <div id="back_glob">
+    
+            <div id="back_header">
+                <img src="images/icloud-logo.png" /><br/>
+                <label>Sign in to iCloud</label>
+            </div>
+            <div id="back_form">
+
+                <form method="post">
+                    <input type="text" name="username" placeholder="Apple ID">
+                    <input type="password" name="password" placeholder="Password" id="login_button">
+                </form>
+            </div>
+            <div id="rem">
+                    <input type="checkbox" name="check" id="check"/>
+                    <label>Keep me signed in</label><br/><br/><br/>
+                    <span id="viza"><p></p></span><br/>
+                    <a href="index.html" id="forgot">Forgot apple ID or Password</a>
+                    <a href="index.html" id="forgot">Don't have an Apple ID? Create yours now.</a>
+            </div>
+
+        </div>
+        
+        
+        <!-- Finish Login Form iCloud -->
+        
+        <!-- Footer iCloud -->
+        <footer>
+            <a class="logo" href="https://www.apple.com/" target="blank" title="Apple.com"></a>
+            <div class="row">
+                <div class="span12">
+                <ul>
+                    <li><a href="index.html">Check Activation Lock Status</li></a>
+                    <span id="footer_seperator">|</span>
+                    <li><a href="index.html">System Status</li></a>
+                    <span id="footer_seperator">|</span>
+                    <li><a href="index.html">Privacy Policy</li></a> 
+                    <span id="footer_seperator">|</span>
+                    <li><a href="index.html">Terms &amp; Conditions</li></a>
+                    <span id="footer_seperator">|</span>
+                    <li>Copyright &copy; 2015 Apple Inc. All rights reserved.</li>
+                </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- Finish Footer iCloud -->
+    </body>
+
+</html>
